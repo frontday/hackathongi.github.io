@@ -1,0 +1,32 @@
+
+/* -------------------------------------------------------------------------
+ * COLORS BRAND
+ *
+ * Define brand colors and its priorities
+ */
+
+
+$s-color-brand-red:         #ec1b2d !default;
+$s-color-brand-yellow:      #f9eb2d !default;
+$s-color-brand-blue:        #20a0de !default;
+
+
+/* BRAND PRIORITIES
+ * Used in some material and components
+ */
+$s-color-brand-first:       $s-color-brand-red !default;
+$s-color-brand-second:      $s-color-brand-yellow !default;
+$s-color-brand-third:       $s-color-brand-blue !default;
+
+
+/* AS AN OBJECT
+ * Used in utilities
+ */
+$s-colors-brand: (
+  red:                      $s-color-brand-red,
+  yellow:                   $s-color-brand-yellow,
+  blue:                     $s-color-brand-blue,
+  first:                    $s-color-brand-first,
+  second:                   $s-color-brand-second,
+  third:                    $s-color-brand-third,
+) !default;

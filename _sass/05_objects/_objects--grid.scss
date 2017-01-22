@@ -1,0 +1,62 @@
+
+/* -------------------------------------------------------------------------
+ * GRID
+ *
+ * Base grid container flex by default
+ *
+ */
+$o-grid-spaces:                         map_remove($s-spaces, large, huge) !default;
+$o-grid-default-space:                  medium !default;
+$o-grid-include-modifiers-space:        true !default;
+$o-grid-include-modifiers-alignment:    true !default;
+
+
+.o-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: (map-get($o-grid-spaces, $o-grid-default-space) * -.5);
+  margin-left: (map-get($o-grid-spaces, $o-grid-default-space) * -.5);
+  > .o-grid__item {
+    display: flex;
+    width: 100%;
+    padding: 0 (map-get($o-grid-spaces, $o-grid-default-space) * .5);
+    margin-bottom: s-core-px-to-rem(map-get($o-grid-spaces, $o-grid-default-space));
+  }
+}
+
+
+// Space modifiers
+// --------------------------------------------------
+@mixin o-grid--space($space-name: none, $space-value: 0) {
+  .o-grid--space-#{$space-name} {
+    margin-right: ($space-value * -.5);
+    margin-left: ($space-value * -.5);
+    > .o-grid__item {
+      padding: 0 ($space-value * .5);
+      margin-bottom: s-core-px-to-rem($space-value);
+    }
+  }
+}
+
+@if ($o-grid-include-modifiers-space) {
+  @each $space-name, $space-value in $o-grid-spaces {
+    @if ($space-name != $o-grid-default-space) {
+      @include o-grid--space($space-name, $space-value);
+    }
+  }
+}
+
+
+// Alignment modifiers
+// --------------------------------------------------
+@if ($o-grid-include-modifiers-alignment) {
+
+  .o-grid--align-center {
+    justify-content: center;
+  }
+
+  .o-grid--align-right {
+    justify-content: flex-end;
+  }
+
+}

@@ -1,0 +1,62 @@
+
+/* -------------------------------------------------------------------------
+ * BLOCK
+ *
+ * Stacked image-with-text object. A simple abstraction to cover a very commonly
+ * occurring design pattern.
+ *
+ */
+$o-block-spaces:                        $s-spaces !default;
+$o-block-default-space:                 medium !default;
+$o-block-include-modifiers-space:       true !default;
+$o-block-include-modifiers-alignment:   true !default;
+
+
+.o-block {
+  display: block;
+  text-align: center;
+}
+
+
+.o-block__img {
+  margin-bottom: map-get($o-block-spaces, $o-block-default-space);
+}
+
+.o-block__body {
+  display: block;
+}
+
+
+// Space modifiers
+// --------------------------------------------------
+
+@mixin o-block--space($space-name: none, $space-value: 0) {
+  .o-block--space-#{$space-name} > .o-block__img {
+    margin-bottom: $space-value;
+  }
+}
+
+@if ($o-block-include-modifiers-space) {
+  @each $space-name, $space-value in $o-block-spaces {
+    @if ($space-name != $o-block-default-space) {
+      @include o-block--space($space-name, $space-value);
+    }
+  }
+}
+
+
+// Alignment modifiers
+// --------------------------------------------------
+
+@if ($o-block-include-modifiers-alignment) {
+
+  .o-block--right {
+    text-align: right;
+  }
+
+  .o-block--left {
+    text-align: left;
+  }
+
+}
+

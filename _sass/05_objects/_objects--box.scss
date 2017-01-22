@@ -1,0 +1,41 @@
+
+/* -------------------------------------------------------------------------
+ * BOX
+ *
+ * The box object simply boxes off content. Extend with cosmetic styles in the
+ * Components layer.
+ *
+ */
+$o-box-spaces:                          $s-spaces !default;
+$o-box-default-space:                   medium !default;
+$o-box-include-modifiers-space:         true !default;
+
+
+/* [1]. So we can apply the `.o-box` class to naturally-inline elements. */
+.o-box {
+  @include t-clearfix();
+  display: block; /* [1] */
+  padding: map-get($o-box-spaces, $o-box-default-space);
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+
+// Space modifiers
+// --------------------------------------------------
+@mixin o-box--space($space-name: none, $space-value: 0) {
+  .o-box--space-#{$space-name} {
+    padding: $space-value;
+  }
+}
+
+@if ($o-box-include-modifiers-space) {
+  @each $space-name, $space-value in $o-box-spaces {
+    @if ($space-name != $o-box-default-space) {
+      @include o-box--space($space-name, $space-value);
+    }
+  }
+}

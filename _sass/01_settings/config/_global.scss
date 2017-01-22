@@ -1,0 +1,30 @@
+
+/* -------------------------------------------------------------------------
+ * GLOBAL
+ *
+ * Define any project-level configuration, feature switches, etc. in here.
+ */
+
+
+/* ENVIRONMENT
+ * dev .................. Development
+ * docs ................. Documentation
+ * cms .................. CMS including editor
+ * test ................. Test
+ * prod ................. Production
+ */
+$s-config-env:              "dev" !default;
+
+
+/* DEPENDENCIES
+ * Some materials and components have style dependencies on others.
+ * This variable enable/disable to import them on CSS compilation.
+ * Enabling could help if you plan to compile a CSS custom build.
+ */
+$s-config-include-dependencies: false !default;
+
+
+/* DEBUG
+ * for debugging proposes, not defined yet
+ */
+$s-config-debug:            if($s-config-env == "dev", true, false) !default;

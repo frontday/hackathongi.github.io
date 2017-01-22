@@ -1,0 +1,61 @@
+
+/* -------------------------------------------------------------------------
+ * HIDDEN
+ *
+ * Force hide elements on certain breakpoints range
+ *
+ */
+
+$u-hidden-include-from:                 true !default;
+$u-hidden-include-until:                true !default;
+
+$u-hidden-bp-from:                      map_remove($s-breakpoints, xxs) !default;
+$u-hidden-bp-until:                     map_remove($s-breakpoints, xxs) !default;
+
+
+// Utility mixin
+// --------------------------------------------------
+@mixin utilities-hidden($direction: from, $breakpoint: null) {
+
+  // Build a class in the format `.u-hidden[-<direction>][@<breakpoint>]`.
+  .u-hidden-#{$direction}\@#{$breakpoint} {
+    @if ($direction == from ) {
+      @include mq($from: $breakpoint) {
+        display: none !important;
+      }
+    }
+    @if ($direction == until ) {
+      @include mq($until: $breakpoint) {
+        display: none !important;
+      }
+    }
+  }
+
+}
+
+// Hidden From
+// --------------------------------------------------
+
+@if ($u-hidden-include-from) {
+  @if (variable-exists(u-hidden-bp-from)) {
+    @each $bp-name, $bp-value in $u-hidden-bp-from {
+      @if ($bp-value != 0) {
+        @include utilities-hidden($direction: from, $breakpoint: $bp-name);
+      }
+    }
+  }
+}
+
+
+// Hidden Until
+// --------------------------------------------------
+
+@if ($u-hidden-include-until) {
+  @if (variable-exists(u-hidden-bp-until)) {
+    @each $bp-name, $bp-value in $u-hidden-bp-until {
+      @if ($bp-value != 0) {
+        @include utilities-hidden($direction: until, $breakpoint: $bp-name);
+      }
+    }
+  }
+}

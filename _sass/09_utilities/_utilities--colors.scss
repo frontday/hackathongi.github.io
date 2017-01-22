@@ -1,0 +1,87 @@
+
+/* -------------------------------------------------------------------------
+ * COLORS
+ *
+ */
+
+$u-color-include-colors-brand:          true !default;
+$u-color-include-colors-neutral:        true !default;
+$u-color-include-colors-state:          true !default;
+
+$u-color-include-bg-colors-brand:       true !default;
+$u-color-include-bg-colors-neutral:     true !default;
+$u-color-include-bg-colors-state:       true !default;
+
+
+// Utility mixin
+// --------------------------------------------------
+@mixin utilities-color($name, $color) {
+  // Build a class in the format `.u-color[-<name>]`.
+  .u-color-#{$name} {
+    color: $color !important;
+  }
+}
+
+@mixin utilities-bg-color($name, $color) {
+  // Build a class in the format `.u-bg-color[-<name>]`.
+  .u-bg-color-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+
+// BRAND COLORS
+// --------------------------------------------------
+
+@if ($u-color-include-colors-brand) {
+  @if (variable-exists(s-colors-brand)) {
+    @each $name, $color in $s-colors-brand {
+      @include utilities-color($name: 'brand-#{$name}', $color: $color);
+    }
+  }
+}
+@if ($u-color-include-bg-colors-brand) {
+  @if (variable-exists(s-colors-brand)) {
+    @each $name, $color in $s-colors-brand {
+      @include utilities-bg-color($name: 'brand-#{$name}', $color: $color);
+    }
+  }
+}
+
+
+// NEUTRAL COLORS
+// --------------------------------------------------
+
+@if ($u-color-include-colors-neutral) {
+  @if (variable-exists(s-colors-neutral)) {
+    @each $name, $color in $s-colors-neutral {
+      @include utilities-color($name: '#{$name}', $color: $color);
+    }
+  }
+}
+@if ($u-color-include-bg-colors-neutral) {
+  @if (variable-exists(s-colors-neutral)) {
+    @each $name, $color in $s-colors-neutral {
+      @include utilities-bg-color($name: '#{$name}', $color: $color);
+    }
+  }
+}
+
+
+// STATE COLORS
+// --------------------------------------------------
+
+@if ($u-color-include-colors-state) {
+  @if (variable-exists(s-colors-state)) {
+    @each $name, $color in $s-colors-state {
+      @include utilities-color($name: 'state-#{$name}', $color: $color);
+    }
+  }
+}
+@if ($u-color-include-bg-colors-state) {
+  @if (variable-exists(s-colors-state)) {
+    @each $name, $color in $s-colors-state {
+      @include utilities-bg-color($name: 'state-#{$name}', $color: $color);
+    }
+  }
+}

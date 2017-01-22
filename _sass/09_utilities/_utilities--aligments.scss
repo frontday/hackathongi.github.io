@@ -1,0 +1,26 @@
+
+/* -------------------------------------------------------------------------
+ * ALIGNMENTS
+ *
+ * Force text alignment
+ *
+ */
+
+$u-align-include:                       true !default;
+
+
+@if ($u-align-include) {
+
+  .u-align-left {
+    text-align: left !important;
+  }
+
+  .u-align-center {
+    text-align: center !important;
+  }
+
+  .u-align-right {
+    text-align: right !important;
+  }
+
+}

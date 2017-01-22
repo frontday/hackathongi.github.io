@@ -1,0 +1,47 @@
+---
+---
+
+/* ==========================================================================
+   HACKATHON GIRONA STYLESHEET
+   ========================================================================== */
+
+/*
+ * This project is possible thanks to the inspiration and code references from:
+ *
+ * - BEM .................. getbem.com
+ * - ITCSS ................ itcss.io
+ * - InuitCSS ............. github.com/inuitcss | inuitcss.com
+ * - Atomic Design ........ atomicdesign.bradfrost.com
+ * - Rizzo ................ rizzo.lonelyplanet.com
+ * - Bootstrap ............ getbootstrap.com
+ * - Harry Roberts ........ @csswizardy
+ * - Brad Frost ........... @brad_frost
+ * - Mark Otto ............ @mdo
+ * - Ian Feather .......... @ianfeather
+ * - Christoph Reinartz ... @pristenprinz
+ * - and many others ...
+ *
+ */
+
+
+/* -------------------------------------------------------------------------
+ * CONTENTS
+ *
+ * Settings ............... Project configuration, functions and variables
+ * Tools .................. SCSS mixins where project is built on
+ * Generic ................ Normalize and bootstrapping
+ * Elements ............... Basic HTML elements styles
+ * Objects ................ Unstyled design patterns
+ * Material ............... UI material where the components are built on
+ * Components ............. UI components where the pages are built on
+ * Templates .............. Templates and pages specific layout
+ * Utilities .............. Helper classes with important statements
+ */
+
+@import '01_settings/_settings';
+@import '02_tools/_tools';
+@import '03_generic/_generic';
+@import '04_elements/_elements';
+@import '05_objects/_objects';
+
+@import '09_utilities/_utilities';

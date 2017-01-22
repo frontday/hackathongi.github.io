@@ -1,0 +1,51 @@
+
+/* -------------------------------------------------------------------------
+ * BREAKPOINTS
+ *
+ * Define all breakpoints
+ * Extracted from [Google Material Design]
+ * (https://www.google.com/design/spec/layout/adaptive-ui.html)
+ */
+
+
+$s-breakpoints: (
+  xxs:                      0,
+  xs:                       480px,
+  sm:                       600px,
+  sml:                      840px,
+  md:                       960px,
+  lg:                       1280px,
+  xl:                       1440px,
+  xxl:                      1600px,
+  xxxl:                     1920px,
+) !default;
+
+
+/* SCREEN VARS
+ * Referred onto static variables
+ */
+$s-screen-xxs:              map-get($s-breakpoints, xxs) !default;
+$s-screen-xs:               map-get($s-breakpoints, xs) !default;
+$s-screen-sm:               map-get($s-breakpoints, sm) !default;
+$s-screen-sml:              map-get($s-breakpoints, sml) !default;
+$s-screen-md:               map-get($s-breakpoints, md) !default;
+$s-screen-lg:               map-get($s-breakpoints, lg) !default;
+$s-screen-xl:               map-get($s-breakpoints, xl) !default;
+$s-screen-xxl:              map-get($s-breakpoints, xxl) !default;
+$s-screen-xxxl:             map-get($s-breakpoints, xxxl) !default;
+
+
+/* BREAKPOINT INVERTED MAP
+ * --WARNING--: NOT RECOMMENDED. Use only when you really need it.
+ */
+$s-breakpoints-max: (
+  xxs:                      ($s-screen-xs - 1),
+  xs:                       ($s-screen-sm - 1),
+  sm:                       ($s-screen-sml - 1),
+  sml:                      ($s-screen-md - 1),
+  md:                       ($s-screen-lg - 1),
+  lg:                       ($s-screen-xl - 1),
+  xl:                       ($s-screen-xxl - 1),
+  xxl:                      ($s-screen-xxxl - 1),
+  xxxl:                     0,
+) !default;
