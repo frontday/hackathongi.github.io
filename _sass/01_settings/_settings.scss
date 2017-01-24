@@ -14,8 +14,10 @@
  * Configuration and feature switches
  *
  * global ................ environment and feature switches
+ * path .................. assets paths
  */
 @import 'config/_global';
+@import 'config/_path';
 
 
 /* CORE
@@ -54,4 +56,5 @@
 @import 'vars/_colors-neutral';
 @import 'vars/_colors-other';
 @import 'vars/_colors-state';
+@import 'vars/_fonts';
 @import 'vars/_spaces';

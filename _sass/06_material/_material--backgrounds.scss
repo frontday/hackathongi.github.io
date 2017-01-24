@@ -1,0 +1,15 @@
+
+/* -------------------------------------------------------------------------
+ * BACKGROUNDS
+ *
+ */
+
+.m-bg__circuit {
+  background-image: url("#{$s-path-img}/circuit.png");
+  background-repeat: repeat;
+}
+
+.m-bg__circuit--white {
+  background-color: $s-color-brand-white;
+  background-blend-mode: soft-light;
+}

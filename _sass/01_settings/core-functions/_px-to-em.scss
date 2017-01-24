@@ -36,7 +36,7 @@
     @error "s-core-px-to-em: `#{$reference-value-rem}` needs to be a rem value.";
   }
 
-  @if (unit($root-font-size) != "rem") {
+  @if (unit($root-font-size) != "px") {
     @error "s-core-px-to-em: `#{$root-font-size}` needs to be a pixel value.";
   }
 

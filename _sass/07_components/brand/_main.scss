@@ -1,0 +1,71 @@
+
+/* ==========================================================================
+ * BRAND
+ *
+ * Logo and text
+ *
+   ========================================================================== */
+
+.c-brand {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.c-brand__logo-container {
+  @include t-aspect-ratio-set(2,1);
+}
+.c-brand__logo {
+  background-image: url("#{$s-path-img}/angels.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.c-brand__text {
+  font-size: s-core-px-to-em(32px, 1rem);
+  > * {
+    display: block;
+  }
+}
+.c-brand__text-1 {
+  color: $s-color-brand-first;
+}
+.c-brand__text-2 {
+  color: $s-color-brand-second;
+}
+.c-brand__text-3 {
+  color: $s-color-brand-black;
+  font-size: .6em;
+}
+
+// Landscape version
+
+@mixin c-brand--landscape() {
+  direction: rtl;
+
+  .c-brand__logo-container {
+    display: inline-block;
+    width: 10em;
+    @include t-aspect-ratio-override(1,1);
+  }
+  .c-brand__logo {
+    background-image: url("#{$s-path-img}/angel.svg");
+  }
+  .c-brand__text {
+    display: inline-block;
+    direction: ltr;
+    text-align: right;
+    max-width: 70%;
+    padding-right: $s-space;
+    transform: translateY(-50%);
+  }
+}
+
+.c-brand--landscape {
+  @include c-brand--landscape();
+}
+@include mq($from: xs) {
+  .c-brand--landscape\@xs {
+    @include c-brand--landscape();
+  }
+}

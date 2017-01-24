@@ -1,2 +1,5 @@
 name: Hackathon Girona 2017
 markdown: kramdown
+
+gems: ['jekyll-github-metadata']
+repository: hackathongi/hackathongi.github.io

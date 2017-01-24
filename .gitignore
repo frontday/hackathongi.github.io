@@ -4,6 +4,9 @@
 # Jekyll site
 _site/
 
+#Github token
+.ghtoken
+
 # Node Modules
 node_modules/
 npm-debug.log

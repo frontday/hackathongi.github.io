@@ -7,7 +7,7 @@
  */
 
 
-$headings-line-height:      1.25 !default;
+$headings-line-height:      1 !default;
 
 $headings-font-size-h1:     36px !default;
 $headings-font-size-h2:     28px !default;
@@ -24,6 +24,7 @@ h4,
 h5,
 h6 {
   line-height: $headings-line-height;
+  font-family: $s-font-headings;
 }
 
 

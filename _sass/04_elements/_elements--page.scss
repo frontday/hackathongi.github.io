@@ -16,6 +16,8 @@
 
 
 html {
+  font-family: $s-font-body;
+  color: $s-color-body;
   font-size: s-core-strip-units(s-core-px-to-rem($s-core-font-size, 16px)) * 1em; /* [1] */
   line-height: s-core-strip-units($s-core-line-height / $s-core-font-size); /* [1] */
   overflow-y: scroll; /* [2] */
