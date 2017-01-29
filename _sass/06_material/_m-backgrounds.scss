@@ -1,0 +1,29 @@
+
+/* -------------------------------------------------------------------------
+ * BACKGROUNDS
+ *
+ */
+
+.m-bg-circuit {
+  position: relative;
+  &::after,
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: "";
+
+  }
+  &::after {
+    background-color: $s-color-brand-white;
+    z-index: -2;
+  }
+  &::before {
+    background-image: url("#{$s-path-img}/circuit.png");
+    background-repeat: repeat;
+    opacity: .05;
+    z-index: -1;
+  }
+}

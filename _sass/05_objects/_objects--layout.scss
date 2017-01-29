@@ -53,6 +53,9 @@
 // By default we use the `font-size: 0;` trick to remove whitespace between
 // items. Set this to true in order to use a markup-based strategy like
 // commenting out whitespace or minifying HTML.
+
+$o-layout-enabled:                        true !default;
+
 $o-layout-use-markup-fix: false !default;
 
 $o-layout-spaces:                         map_remove($s-spaces, large, huge) !default;
@@ -66,51 +69,53 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 // Default/mandatory classes
 // --------------------------------------------------
 
-/**
- * [1]. Allows us to use the layout object on any type of element.
- * [2]. We need to defensively reset any box-model properties.
- * [3]. Use the negative margin trick for multi-row grids:
- *      http://csswizardry.com/2011/08/building-better-grid-systems/
- */
+@if ($o-layout-enabled) {
+  /**
+   * [1]. Allows us to use the layout object on any type of element.
+   * [2]. We need to defensively reset any box-model properties.
+   * [3]. Use the negative margin trick for multi-row grids:
+   *      http://csswizardry.com/2011/08/building-better-grid-systems/
+   */
 
-.o-layout {
-  display: block; /* [1] */
-  margin: 0; /* [2] */
-  padding: 0; /* [2] */
-  list-style: none; /* [1] */
-  margin-left: -(map-get($o-layout-spaces, $o-layout-default-space)); /* [3] */
+  .o-layout {
+    display: block; /* [1] */
+    margin: 0; /* [2] */
+    padding: 0; /* [2] */
+    list-style: none; /* [1] */
+    margin-left: -(map-get($o-layout-spaces, $o-layout-default-space)); /* [3] */
 
-  @if ($o-layout-use-markup-fix == false) {
-    font-size: 0;
+    @if ($o-layout-use-markup-fix == false) {
+      font-size: 0;
+    }
+
   }
 
-}
 
+  /**
+    * [1]. Required in order to combine fluid widths with fixed gutters.
+    * [2]. Allows us to manipulate grids vertically, with text-level properties,
+    *      etc.
+    * [3]. Default item alignment is with the tops of each other, like most
+    *      traditional grid/layout systems.
+    * [4]. By default, all layout items are full-width (mobile first).
+    * [5]. Gutters provided by left padding:
+    *      http://csswizardry.com/2011/08/building-better-grid-systems/
+    * [6]. Fallback for old IEs not supporting `rem` values.
+    */
 
-/**
-  * [1]. Required in order to combine fluid widths with fixed gutters.
-  * [2]. Allows us to manipulate grids vertically, with text-level properties,
-  *      etc.
-  * [3]. Default item alignment is with the tops of each other, like most
-  *      traditional grid/layout systems.
-  * [4]. By default, all layout items are full-width (mobile first).
-  * [5]. Gutters provided by left padding:
-  *      http://csswizardry.com/2011/08/building-better-grid-systems/
-  * [6]. Fallback for old IEs not supporting `rem` values.
-  */
+  .o-layout__item {
+    box-sizing: border-box; /* [1] */
+    display: inline-block; /* [2] */
+    vertical-align: top; /* [3] */
+    width: 100%; /* [4] */
+    padding-left: map-get($o-layout-spaces, $o-layout-default-space); /* [5] */
 
-.o-layout__item {
-  box-sizing: border-box; /* [1] */
-  display: inline-block; /* [2] */
-  vertical-align: top; /* [3] */
-  width: 100%; /* [4] */
-  padding-left: map-get($o-layout-spaces, $o-layout-default-space); /* [5] */
+    @if ($o-layout-use-markup-fix == false) {
+      font-size: $s-core-font-size; /* [6] */
+      font-size: s-core-px-to-rem($s-core-font-size);
+    }
 
-  @if ($o-layout-use-markup-fix == false) {
-    font-size: $s-core-font-size; /* [6] */
-    font-size: s-core-px-to-rem($s-core-font-size);
   }
-
 }
 
 
@@ -125,7 +130,7 @@ $o-layout-include-modifiers-alignment-h:  true !default;
   }
 }
 
-@if ($o-layout-include-modifiers-space) {
+@if ($o-layout-enabled and $o-layout-include-modifiers-space) {
   @each $space-name, $space-value in $o-layout-spaces {
     @if ($space-name != $o-layout-default-space) {
       @include o-layout--space($space-name, $space-value);
@@ -136,7 +141,7 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 
 // Reverse modifier
 // --------------------------------------------------
-@if ($o-layout-include-modifiers-reverse) {
+@if ($o-layout-enabled and $o-layout-include-modifiers-reverse) {
 
   // Reverse the rendered order of the grid system.
   .o-layout--reverse {
@@ -152,7 +157,7 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 
 // Vertical alignments
 // --------------------------------------------------
-@if ($o-layout-include-modifiers-alignment-v) {
+@if ($o-layout-enabled and $o-layout-include-modifiers-alignment-v) {
 
   // Align all grid items to the middles of each other.
   .o-layout--middle {
@@ -173,7 +178,7 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 
 // Horizontal alignments
 // --------------------------------------------------
-@if ($o-layout-include-modifiers-alignment-h) {
+@if ($o-layout-enabled and $o-layout-include-modifiers-alignment-h) {
 
   // Fill up the layout system from the centre.
   .o-layout--center {

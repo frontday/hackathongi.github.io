@@ -6,19 +6,27 @@
  * Components layer.
  *
  */
+
+$o-box-enabled:                         true !default;
+
 $o-box-spaces:                          $s-spaces !default;
 $o-box-default-space:                   medium !default;
 $o-box-include-modifiers-space:         true !default;
 
 
-/* [1]. So we can apply the `.o-box` class to naturally-inline elements. */
-.o-box {
-  @include t-clearfix();
-  display: block; /* [1] */
-  padding: map-get($o-box-spaces, $o-box-default-space);
+@if ($o-box-enabled) {
 
-  > :last-child {
-    margin-bottom: 0;
+  /* [1]. So we can apply the `.o-box` class to naturally-inline elements. */
+  .o-box {
+    @include t-clearfix();
+    display: block; /* [1] */
+    padding-top: map-get($o-box-spaces, $o-box-default-space);
+    padding-bottom: map-get($o-box-spaces, $o-box-default-space);
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
   }
 
 }
@@ -28,11 +36,12 @@ $o-box-include-modifiers-space:         true !default;
 // --------------------------------------------------
 @mixin o-box--space($space-name: none, $space-value: 0) {
   .o-box--space-#{$space-name} {
-    padding: $space-value;
+    padding-top: $space-value;
+    padding-bottom: $space-value;
   }
 }
 
-@if ($o-box-include-modifiers-space) {
+@if ($o-box-enabled and $o-box-include-modifiers-space) {
   @each $space-name, $space-value in $o-box-spaces {
     @if ($space-name != $o-box-default-space) {
       @include o-box--space($space-name, $space-value);

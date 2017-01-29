@@ -1,0 +1,38 @@
+
+/* -------------------------------------------------------------------------
+ * TYPOGRAPHY
+ *
+ */
+
+$m-body__font-sizes: (
+  tiny:                        s-core-px-to-rem(12px),
+  small:                       s-core-px-to-rem(14px),
+  large:                       s-core-px-to-rem(18px),
+  huge:                        s-core-px-to-rem(24px),
+) !default;
+
+$m-heading__font-sizes: (
+  tiny:                        s-core-px-to-rem(16px),
+  small:                       s-core-px-to-rem(20px),
+  medium:                      s-core-px-to-rem(26px),
+  large:                       s-core-px-to-rem(30px),
+  huge:                        s-core-px-to-rem(36px),
+) !default;
+
+
+
+// m-body--{$size-name} classes
+
+@each $size-name, $size-value in $m-body__font-sizes {
+  .m-body--#{$size-name} {
+    font-size: $size-value;
+  }
+}
+
+// m-heading--{$size-name} classes
+
+@each $size-name, $size-value in $m-heading__font-sizes {
+  .m-heading--#{$size-name} {
+    font-size: $size-value;
+  }
+}

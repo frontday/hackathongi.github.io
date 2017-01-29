@@ -1,0 +1,20 @@
+
+/* ==========================================================================
+ * LIST DESCRIPTION
+ *
+   ========================================================================== */
+
+.c-list-description {
+  line-height: 1.25;
+  dt {
+    font-size: map-get($m-body__font-sizes, small);
+    font-weight: bold;
+  }
+  dd {
+    margin-left: 0;
+    margin-bottom: map-get($s-spaces, small);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

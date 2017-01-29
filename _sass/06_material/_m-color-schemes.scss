@@ -1,0 +1,28 @@
+
+/* -------------------------------------------------------------------------
+ * COLOR SCHEMES
+ *
+ */
+
+.m-color-scheme--blue {
+  background-color: $s-color-brand-blue;
+  color: $s-color-white;
+  a { color: inherit; }
+}
+
+.m-color-scheme--white {
+  background-color: $s-color-brand-white;
+  color: $s-color-brand-black;
+}
+
+.m-color-scheme--red {
+  background-color: $s-color-brand-red;
+  color: $s-color-white;
+  a { color: inherit; }
+}
+
+.m-color-scheme--turquoise {
+  background-color: $s-color-brand-turquoise;
+  color: $s-color-white;
+  a { color: inherit; }
+}

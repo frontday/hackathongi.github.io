@@ -6,19 +6,26 @@
  *
  */
 
+$o-table-enabled:                       true !default;
+
 $o-table-spaces:                        map_remove($s-spaces, large, huge) !default;
 $o-table-default-space:                 none !default;
 $o-table-include-modifiers-space:       true !default;
 $o-table-include-modifiers-fixed:       true !default;
 
 
-.o-table {
-  width: 100%;
-  th,
-  td {
-    padding: map-get($o-table-spaces, $o-table-default-space);
+@if($o-table-enabled) {
+
+  .o-table {
+    width: 100%;
+    th,
+    td {
+      padding: map-get($o-table-spaces, $o-table-default-space);
+    }
   }
+
 }
+
 
 
 // Space modifiers
@@ -33,7 +40,7 @@ $o-table-include-modifiers-fixed:       true !default;
   }
 }
 
-@if ($o-table-include-modifiers-space) {
+@if ($o-table-enabled and $o-table-include-modifiers-space) {
   @each $space-name, $space-value in $o-table-spaces {
     @if ($space-name != $o-table-default-space) {
       @include o-table--space($space-name, $space-value);
@@ -52,7 +59,7 @@ $o-table-include-modifiers-fixed:       true !default;
  * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
  */
 
-@if ($o-table-include-modifiers-fixed) {
+@if ($o-table-enabled and $o-table-include-modifiers-fixed) {
   .o-table--fixed {
     table-layout: fixed;
   }

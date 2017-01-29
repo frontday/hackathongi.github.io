@@ -4,6 +4,8 @@
  *
  */
 
+$u-colors-enabled:                      true !default;
+
 $u-color-include-colors-brand:          true !default;
 $u-color-include-colors-neutral:        true !default;
 $u-color-include-colors-state:          true !default;
@@ -33,14 +35,14 @@ $u-color-include-bg-colors-state:       true !default;
 // BRAND COLORS
 // --------------------------------------------------
 
-@if ($u-color-include-colors-brand) {
+@if ($u-colors-enabled and $u-color-include-colors-brand) {
   @if (variable-exists(s-colors-brand)) {
     @each $name, $color in $s-colors-brand {
       @include utilities-color($name: 'brand-#{$name}', $color: $color);
     }
   }
 }
-@if ($u-color-include-bg-colors-brand) {
+@if ($u-colors-enabled and $u-color-include-bg-colors-brand) {
   @if (variable-exists(s-colors-brand)) {
     @each $name, $color in $s-colors-brand {
       @include utilities-bg-color($name: 'brand-#{$name}', $color: $color);
@@ -52,14 +54,14 @@ $u-color-include-bg-colors-state:       true !default;
 // NEUTRAL COLORS
 // --------------------------------------------------
 
-@if ($u-color-include-colors-neutral) {
+@if ($u-colors-enabled and $u-color-include-colors-neutral) {
   @if (variable-exists(s-colors-neutral)) {
     @each $name, $color in $s-colors-neutral {
       @include utilities-color($name: '#{$name}', $color: $color);
     }
   }
 }
-@if ($u-color-include-bg-colors-neutral) {
+@if ($u-colors-enabled and $u-color-include-bg-colors-neutral) {
   @if (variable-exists(s-colors-neutral)) {
     @each $name, $color in $s-colors-neutral {
       @include utilities-bg-color($name: '#{$name}', $color: $color);
@@ -71,14 +73,14 @@ $u-color-include-bg-colors-state:       true !default;
 // STATE COLORS
 // --------------------------------------------------
 
-@if ($u-color-include-colors-state) {
+@if ($u-colors-enabled and $u-color-include-colors-state) {
   @if (variable-exists(s-colors-state)) {
     @each $name, $color in $s-colors-state {
       @include utilities-color($name: 'state-#{$name}', $color: $color);
     }
   }
 }
-@if ($u-color-include-bg-colors-state) {
+@if ($u-colors-enabled and $u-color-include-bg-colors-state) {
   @if (variable-exists(s-colors-state)) {
     @each $name, $color in $s-colors-state {
       @include utilities-bg-color($name: 'state-#{$name}', $color: $color);

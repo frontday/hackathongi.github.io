@@ -7,7 +7,15 @@
  *
  */
 
-.o-list-bare {
-  list-style: none;
-  margin-left: 0;
+$o-list-bare-enabled:                   true !default;
+
+
+@if ($o-list-bare-enabled) {
+
+  .o-list-bare {
+    list-style: none;
+    margin-left: 0;
+  }
+
 }
+

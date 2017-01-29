@@ -1,0 +1,34 @@
+
+/* ==========================================================================
+ * LEADING HEADER
+ *
+ * Appears on home page
+ *
+   ========================================================================== */
+
+.c-leading-header {
+  padding-top: $s-space;
+  padding-bottom: $s-space;
+  @include mq($from: xs) {
+    padding-bottom: $s-space;
+  }
+}
+
+.c-leading-header__brand {
+  @include mq($from: md) {
+    font-size: 1.5rem;
+  }
+}
+
+.c-leading-header__legend {
+  float: right;
+  display: inline-block;
+  background-color: $s-color-brand-blue;
+  color: lighten($s-color-brand-white, 25%);
+  padding: .3em .6em;
+  font-size: map-get($m-body__font-sizes, tiny);
+  transform: translate(0, calc(#{$s-space} + 25%));
+  @include mq($from: md) {
+    font-size: map-get($m-body__font-sizes, small);
+  }
+}

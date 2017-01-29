@@ -20,14 +20,15 @@
     <!--<script src="{{ site.github.url }}/js/attr-helper.js" defer></script>-->
 
 </head>
-<body>
+<body class="{{ page.template }}">
 
 {% include c-leading-header.html %}
 
-<p>Testing &#128269; </p>
 <main>
     {{ content }}
 </main>
+
+{% include c-footer.html %}
 
 </body>
 </html>

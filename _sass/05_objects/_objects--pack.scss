@@ -7,6 +7,8 @@
  *
  */
 
+$o-pack-enabled:                        true !default;
+
 $o-pack-spaces:                         map_remove($s-spaces, large, huge) !default;
 $o-pack-default-space:                  none !default;
 $o-pack-include-modifiers-space:        true !default;
@@ -15,30 +17,35 @@ $o-pack-include-modifiers-alignment-v:  true !default;
 $o-pack-include-modifiers-width-auto:   true !default;
 
 
-/*
+@if ($o-pack-enabled) {
+
+  /*
  * [1]. Fill all available space.
  * [2]. Remove any leftover styling from lists.
  * [3]. Cause children to be automatically equally sized.
  *
  */
 
-.o-pack {
-  width: 100%; /* [1] */
-  margin-left: 0; /* [2] */
-  display: table;
-  table-layout: fixed; /* [3] */
-  border-spacing: map-get($o-pack-spaces, $o-pack-default-space);
+  .o-pack {
+    width: 100%; /* [1] */
+    margin-left: 0; /* [2] */
+    display: table;
+    table-layout: fixed; /* [3] */
+    border-spacing: map-get($o-pack-spaces, $o-pack-default-space);
+  }
+
+  /**
+   * [1]. Cause children to adopt table-like structure.
+   * [2]. Default item alignment is with the tops of each other.
+   */
+
+  .o-pack__item {
+    display: table-cell; /* [1] */
+    vertical-align: top; /* [2] */
+  }
+
 }
 
-/**
- * [1]. Cause children to adopt table-like structure.
- * [2]. Default item alignment is with the tops of each other.
- */
-
-.o-pack__item {
-  display: table-cell; /* [1] */
-  vertical-align: top; /* [2] */
-}
 
 
 // Space modifiers
@@ -50,7 +57,7 @@ $o-pack-include-modifiers-width-auto:   true !default;
   }
 }
 
-@if ($o-pack-include-modifiers-space) {
+@if ($o-pack-enabled and $o-pack-include-modifiers-space) {
   @each $space-name, $space-value in $o-pack-spaces {
     @if ($space-name != $o-pack-default-space) {
       @include o-pack--space($space-name, $space-value);
@@ -62,7 +69,7 @@ $o-pack-include-modifiers-width-auto:   true !default;
 // Auto-Width modifier
 // --------------------------------------------------
 
-@if ($o-pack-include-modifiers-width-auto) {
+@if ($o-pack-enabled and $o-pack-include-modifiers-width-auto) {
   .o-pack--auto {
     table-layout: auto;
   }
@@ -72,7 +79,7 @@ $o-pack-include-modifiers-width-auto:   true !default;
 // Vertical alignment modifiers
 // --------------------------------------------------
 
-@if ($o-pack-include-modifiers-alignment-v) {
+@if ($o-pack-enabled and $o-pack-include-modifiers-alignment-v) {
 
   .o-pack--middle > .o-pack__item {
     vertical-align: middle;
@@ -88,7 +95,7 @@ $o-pack-include-modifiers-width-auto:   true !default;
 // Reverse modifier
 // --------------------------------------------------
 
-@if ($o-pack-include-modifiers-reverse) {
+@if ($o-pack-enabled and $o-pack-include-modifiers-reverse) {
 
   .o-pack--reverse {
     direction: rtl;

@@ -23,6 +23,7 @@
 
 .c-brand__text {
   font-size: s-core-px-to-em(32px, 1rem);
+  margin-bottom: 0;
   > * {
     display: block;
   }
@@ -42,9 +43,12 @@
 
 @mixin c-brand--landscape() {
   direction: rtl;
+  display: table;
+  margin: 0 auto;
 
   .c-brand__logo-container {
-    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
     width: 10em;
     @include t-aspect-ratio-override(1,1);
   }
@@ -52,12 +56,11 @@
     background-image: url("#{$s-path-img}/angel.svg");
   }
   .c-brand__text {
-    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
     direction: ltr;
     text-align: right;
-    max-width: 70%;
     padding-right: $s-space;
-    transform: translateY(-50%);
   }
 }
 

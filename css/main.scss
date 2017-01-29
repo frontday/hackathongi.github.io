@@ -38,6 +38,7 @@
  * Utilities .............. Helper classes with important statements
  */
 
+@import 'config';
 @import '01_settings/_settings';
 @import '02_tools/_tools';
 @import '03_generic/_generic';
@@ -45,5 +46,5 @@
 @import '05_objects/_objects';
 @import '06_material/_material';
 @import '07_components/_components';
-
+@import '08_templates/templates';
 @import '09_utilities/_utilities';

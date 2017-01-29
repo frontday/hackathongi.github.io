@@ -1,0 +1,40 @@
+gold:
+
+  - name: Free slot 01
+    image: sponsors/free-slot.png
+    href: http://www.google.es
+
+  - name: Free slot 02
+    image: sponsors/free-slot.png
+    href: http://www.google.es
+
+  - name: Free slot 03
+    image: sponsors/free-slot.png
+    href: http://www.google.es
+
+
+silver:
+
+  - name: Free slot 05
+    image: sponsors/free-slot.png
+    href: http://www.google.es
+
+  - name: Free slot 06
+    image: sponsors/free-slot.png
+    href: http://www.google.es
+
+  - name: Free slot 07
+    image: sponsors/free-slot.png
+    href: http://www.google.es
+
+  - name: Free slot 08
+    image: sponsors/free-slot.png
+    href: http://www.google.es
+
+  - name: Free slot 09
+    image: sponsors/free-slot.png
+    href: http://www.google.es
+
+  - name: Free slot 10
+    image: sponsors/free-slot.png
+    href: http://www.google.es

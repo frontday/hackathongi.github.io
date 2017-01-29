@@ -1,0 +1,35 @@
+
+/* ==========================================================================
+ * CONFIG
+ * Vars adjustments
+ * Feature toggling
+ *
+   ========================================================================== */
+
+// Objects
+
+$o-block-enabled:                       false !default;
+$o-box-enabled:                         true !default;
+$o-crop-enabled:                        false !default;
+$o-flag-enabled:                        false !default;
+$o-layout-enabled:                      true !default;
+$o-list-bare-enabled:                   false !default;
+$o-list-inline-enabled:                 false !default;
+$o-media-enabled:                       false !default;
+$o-pack-enabled:                        false !default;
+$o-ratio-enabled:                       false !default;
+$o-table-enabled:                       false !default;
+$o-wrapper-enabled:                     true !default;
+
+$o-wrapper-include-modifiers-bp-from:   false !default;
+$o-wrapper-include-modifiers-bp-to:     false !default;
+
+
+// Utilities
+
+$u-align-enabled:                       true !default;
+$u-colors-enabled:                      false !default;
+$u-hidden-enabled:                      false !default;
+$u-widths-enabled:                      true !default;
+
+

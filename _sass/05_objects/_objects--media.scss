@@ -7,39 +7,44 @@
  *
  */
 
+$o-media-enabled:                       true !default;
+
 $o-media-spaces:                        map_remove($s-spaces, large, huge) !default;
 $o-media-default-space:                 medium !default;
 $o-media-include-modifiers-space:       true !default;
 $o-media-include-modifiers-reverse:     true !default;
 
 
-.o-media {
-  @include t-clearfix;
-  display: block;
-}
+@if ($o-media-enabled) {
 
-
-.o-media__img {
-  float: left;
-  margin-right: map-get($o-media-spaces, $o-media-default-space);
-
-  > img {
+  .o-media {
+    @include t-clearfix;
     display: block;
   }
 
-}
+  .o-media__img {
+    float: left;
+    margin-right: map-get($o-media-spaces, $o-media-default-space);
 
+    > img {
+      display: block;
+    }
 
-.o-media__body {
-  overflow: hidden;
-  display: block;
+  }
 
-  &,
-  > :last-child {
-    margin-bottom: 0;
+  .o-media__body {
+    overflow: hidden;
+    display: block;
+
+    &,
+    > :last-child {
+      margin-bottom: 0;
+    }
+
   }
 
 }
+
 
 
 // Space modifiers
@@ -61,7 +66,7 @@ $o-media-include-modifiers-reverse:     true !default;
   }
 }
 
-@if ($o-media-include-modifiers-space) {
+@if ($o-media-enabled and $o-media-include-modifiers-space) {
   @each $space-name, $space-value in $o-media-spaces {
     @if ($space-name != $o-media-default-space) {
       @include o-media--space($space-name, $space-value);
@@ -72,7 +77,7 @@ $o-media-include-modifiers-reverse:     true !default;
 
 // Reverse modifier
 // --------------------------------------------------
-@if ($o-media-include-modifiers-reverse) {
+@if ($o-media-enabled and $o-media-include-modifiers-reverse) {
 
   .o-media--reverse {
     > .o-media__img {

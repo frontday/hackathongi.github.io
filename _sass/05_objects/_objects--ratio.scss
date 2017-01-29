@@ -6,6 +6,8 @@
  *
  */
 
+$o-ratio-enabled:                       true !default;
+
 $o-ratio-include-modifiers-bp:          true !default;
 
 
@@ -43,12 +45,16 @@ $o-ratio-include-modifiers-bp:          true !default;
 
 // Generate the main ratio selectors
 // -------------------------------------------
-@include o-ratios();
+@if ($o-ratio-enabled) {
+
+  @include o-ratios();
+
+}
 
 
 // Generate the ratios variants for each breakpoint
 // -------------------------------------------
-@if ($o-ratio-include-modifiers-bp) {
+@if ($o-ratio-enabled and $o-ratio-include-modifiers-bp) {
 
   @each $bp-name, $bp-value in map_remove($s-breakpoints, xxs) {
     @include mq($from: $bp-name) {

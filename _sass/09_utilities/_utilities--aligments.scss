@@ -6,21 +6,30 @@
  *
  */
 
-$u-align-include:                       true !default;
+$u-align-enabled:                       true !default;
+
+$u-align-include-modifiers-bp:          true !default;
+$u-align-bp:                            map_remove($s-breakpoints, xxs) !default;
 
 
-@if ($u-align-include) {
-
-  .u-align-left {
-    text-align: left !important;
+@mixin u-alignment($direction: left, $bp: null) {
+  .u-align-#{$direction}#{$bp} {
+    text-align: $direction !important;
   }
+}
 
-  .u-align-center {
-    text-align: center !important;
+@if ($u-align-enabled) {
+  @include u-alignment(left);
+  @include u-alignment(center);
+  @include u-alignment(right);
+}
+
+@if ($u-align-enabled and $u-align-include-modifiers-bp) {
+  @each $bp-name, $bp-value in $u-align-bp {
+    @include mq($from: $bp-name) {
+      @include u-alignment(left, \@#{$bp-name});
+      @include u-alignment(center, \@#{$bp-name});
+      @include u-alignment(right, \@#{$bp-name});
+    }
   }
-
-  .u-align-right {
-    text-align: right !important;
-  }
-
 }

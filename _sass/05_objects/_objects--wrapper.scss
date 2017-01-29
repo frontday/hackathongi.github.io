@@ -6,11 +6,13 @@
  *
  */
 
+$o-wrapper-enabled:                     true !default;
+
 $o-wrapper-spaces:                      map_remove($s-spaces, large, huge) !default;
-$o-wrapper-default-space:               none !default;
+$o-wrapper-default-space:               medium !default;
 $o-wrapper-include-modifiers-space:     true !default;
 
-$o-wrapper-bp-size-diff:                80px !default;
+$o-wrapper-bp-size-diff:                $s-space-large !default;
 $o-wrapper-include-modifiers-bp-from:   true !default;
 $o-wrapper-include-modifiers-bp-to:     true !default;
 $o-wrapper-bp-sizes: (
@@ -25,20 +27,29 @@ $o-wrapper-bp-sizes: (
 ) !default;
 
 
-.o-wrapper {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: map-get($o-wrapper-spaces, $o-wrapper-default-space);
-  padding-left:  map-get($o-wrapper-spaces, $o-wrapper-default-space);
-  @include t-clearfix;
+@if ($o-wrapper-enabled) {
 
-  /*@each $bp-name, $bp-size in $o-wrapper-bp-sizes {
-    @if ($space-name != $o-wrapper-default-space) {
-      @include o-wrapper--space($space-name, $space-value);
+  .o-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: map-get($o-wrapper-spaces, $o-wrapper-default-space);
+    padding-left:  map-get($o-wrapper-spaces, $o-wrapper-default-space);
+    @include t-clearfix;
+
+    @each $bp-name, $bp-size in $o-wrapper-bp-sizes {
+      @include mq($from: $bp-name) {
+        max-width: map-get($o-wrapper-bp-sizes, $bp-name);
+        @if ($bp-name == xs) {
+          padding-right: 0;
+          padding-left:  0;
+        }
+      }
     }
-  }*/
+
+  }
 
 }
+
 
 
 // Space modifiers
@@ -51,7 +62,7 @@ $o-wrapper-bp-sizes: (
   }
 }
 
-@if ($o-wrapper-include-modifiers-space) {
+@if ($o-wrapper-enabled and $o-wrapper-include-modifiers-space) {
   @each $space-name, $space-value in $o-wrapper-spaces {
     @if ($space-name != $o-wrapper-default-space) {
       @include o-wrapper--space($space-name, $space-value);
@@ -75,7 +86,7 @@ $o-wrapper-bp-sizes: (
   }
 }
 
-@if ($o-wrapper-include-modifiers-bp-from) {
+@if ($o-wrapper-enabled and $o-wrapper-include-modifiers-bp-from) {
   @each $bp-name, $bp-size in map_remove($o-wrapper-bp-sizes, xxxl) {
     @include o-wrapper--from($bp-name, $bp-size);
   }
@@ -96,7 +107,7 @@ $o-wrapper-bp-sizes: (
   }
 }
 
-@if ($o-wrapper-include-modifiers-bp-to) {
+@if ($o-wrapper-enabled and $o-wrapper-include-modifiers-bp-to) {
   @each $bp-name, $bp-size in map_remove($o-wrapper-bp-sizes, xs) {
     @include o-wrapper--to($bp-name, $bp-size);
   }

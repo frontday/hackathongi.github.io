@@ -27,6 +27,8 @@
  * N.B. This option is turned off by default.
  */
 
+$u-widths-enabled:                      true !default;
+
 $u-widths-fractions:                    1 2 3 4 5 !default;
 $u-widths-include-bp:                   true !default;
 $u-widths-bp:                           $s-breakpoints !default;
@@ -88,13 +90,15 @@ $u-widths-include-offset-pull:          false !default;
 // Build classes
 // --------------------------------------------------
 
-@include utilities-widths($u-widths-fractions);
+@if ($u-widths-enabled) {
+  @include utilities-widths($u-widths-fractions);
+}
 
 
 // Build classes with BP suffixes
 // --------------------------------------------------
 
-@if ($u-widths-include-bp) {
+@if ($u-widths-enabled and $u-widths-include-bp) {
   @if (variable-exists(u-widths-bp)) {
     @each $bp-name, $bp-value in $u-widths-bp {
       @if ($bp-value != 0) {

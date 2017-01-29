@@ -6,25 +6,30 @@
  * occurring design pattern.
  *
  */
+
+$o-block-enabled:                       true !default;
+
 $o-block-spaces:                        $s-spaces !default;
 $o-block-default-space:                 medium !default;
 $o-block-include-modifiers-space:       true !default;
 $o-block-include-modifiers-alignment:   true !default;
 
+@if ($o-block-enabled) {
+  .o-block {
+    display: block;
+    text-align: center;
+  }
 
-.o-block {
-  display: block;
-  text-align: center;
+  .o-block__img {
+    margin-bottom: map-get($o-block-spaces, $o-block-default-space);
+  }
+
+  .o-block__body {
+    display: block;
+  }
 }
 
 
-.o-block__img {
-  margin-bottom: map-get($o-block-spaces, $o-block-default-space);
-}
-
-.o-block__body {
-  display: block;
-}
 
 
 // Space modifiers
@@ -36,7 +41,7 @@ $o-block-include-modifiers-alignment:   true !default;
   }
 }
 
-@if ($o-block-include-modifiers-space) {
+@if ($o-block-enabled and $o-block-include-modifiers-space) {
   @each $space-name, $space-value in $o-block-spaces {
     @if ($space-name != $o-block-default-space) {
       @include o-block--space($space-name, $space-value);
@@ -48,7 +53,7 @@ $o-block-include-modifiers-alignment:   true !default;
 // Alignment modifiers
 // --------------------------------------------------
 
-@if ($o-block-include-modifiers-alignment) {
+@if ($o-block-enabled and $o-block-include-modifiers-alignment) {
 
   .o-block--right {
     text-align: right;

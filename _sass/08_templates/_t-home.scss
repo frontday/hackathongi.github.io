@@ -1,0 +1,21 @@
+
+/* -------------------------------------------------------------------------
+ * HOME TEMPLATE
+ *
+ */
+
+.t-home__event-details {
+  .c-list-description {
+    margin-bottom: 0;
+  }
+}
+
+.t-home__sponsors {
+  a {
+    display: block;
+    margin-bottom: $s-space;
+  }
+}
+.t-home__sponsors--gold {
+  margin-bottom: $s-space;
+}
