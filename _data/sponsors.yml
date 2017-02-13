@@ -24,8 +24,9 @@ gold:
     image: sponsors/parc.png
     href: http://parcudg.com
 
-  - name: Free slot gold 01
-    image: sponsors/free-slot.png
+  - name: Cloudways
+    image: sponsors/cloudways.png
+    href: https://www.cloudways.com
 
   - name: Free slot gold 02
     image: sponsors/free-slot.png
