@@ -1,40 +1,46 @@
 gold:
 
-  - name: Free slot 01
-    image: sponsors/free-slot.png
-    href: http://www.google.es
+  - name: Ajuntament de Girona
+    image: sponsors/ajgirona.svg
+    href: http://www.girona.cat
 
-  - name: Free slot 02
-    image: sponsors/free-slot.png
-    href: http://www.google.es
+  - name: CDMON
+    image: sponsors/cdmon.png
+    href: https://www.cdmon.com
 
-  - name: Free slot 03
-    image: sponsors/free-slot.png
-    href: http://www.google.es
+  - name: Cannelonia
+    image: sponsors/cannelonia.png
+    href: http://www.cannelonia.com
 
+  - name: Volcànic Internet
+    image: sponsors/volcanic.png
+    href: http://www.volcanicinternet.com
+
+  - name: Wikiloc
+    image: sponsors/wikiloc.png
+    href: https://www.wikiloc.com
+
+  - name: Parc Científic i Tecnològic - Universitat de Girona
+    image: sponsors/parc.png
+    href: http://parcudg.com
+
+  - name: Free slot gold 01
+    image: sponsors/free-slot.png
+
+  - name: Free slot gold 02
+    image: sponsors/free-slot.png
 
 silver:
 
-  - name: Free slot 05
-    image: sponsors/free-slot.png
-    href: http://www.google.es
+  - name: Aenteg
+    image: sponsors/aenteg.png
+    href: http://www.aenteg.com
 
-  - name: Free slot 06
-    image: sponsors/free-slot.png
-    href: http://www.google.es
+  - name: Agile Girona
+    image: sponsors/agile.png
 
-  - name: Free slot 07
+  - name: Free slot silver 01
     image: sponsors/free-slot.png
-    href: http://www.google.es
 
-  - name: Free slot 08
+  - name: Free slot silver 02
     image: sponsors/free-slot.png
-    href: http://www.google.es
-
-  - name: Free slot 09
-    image: sponsors/free-slot.png
-    href: http://www.google.es
-
-  - name: Free slot 10
-    image: sponsors/free-slot.png
-    href: http://www.google.es

@@ -18,4 +18,12 @@
 }
 .t-home__sponsors--gold {
   margin-bottom: $s-space;
+  a {
+    padding: $s-space;
+  }
+}
+.t-home__sponsors--silver {
+  a {
+    padding: $s-space-small;
+  }
 }

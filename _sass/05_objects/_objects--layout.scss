@@ -58,7 +58,7 @@ $o-layout-enabled:                        true !default;
 
 $o-layout-use-markup-fix: false !default;
 
-$o-layout-spaces:                         map_remove($s-spaces, large, huge) !default;
+$o-layout-spaces:                         map_remove($s-spaces, huge) !default;
 $o-layout-default-space:                  medium !default;
 $o-layout-include-modifiers-space:        true !default;
 $o-layout-include-modifiers-reverse:      true !default;

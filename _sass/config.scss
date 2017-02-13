@@ -6,6 +6,11 @@
  *
    ========================================================================== */
 
+// Settings
+
+$s-config-env:                          "prod" !default;
+
+
 // Objects
 
 $o-block-enabled:                       false !default;
