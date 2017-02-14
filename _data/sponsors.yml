@@ -4,6 +4,10 @@ gold:
     image: sponsors/ajgirona.svg
     href: http://www.girona.cat
 
+  - name: Parc Científic i Tecnològic - Universitat de Girona
+    image: sponsors/parc.png
+    href: http://parcudg.com
+
   - name: CDMON
     image: sponsors/cdmon.png
     href: https://www.cdmon.com
@@ -19,10 +23,6 @@ gold:
   - name: Wikiloc
     image: sponsors/wikiloc.png
     href: https://www.wikiloc.com
-
-  - name: Parc Científic i Tecnològic - Universitat de Girona
-    image: sponsors/parc.png
-    href: http://parcudg.com
 
   - name: Cloudways
     image: sponsors/cloudways.png
