@@ -39,9 +39,11 @@ silver:
 
   - name: Tecno Ateneu Vilabrareix
     image: sponsors/tecnoateneu-logo-font-incrustada.svg
+    href: http://www.tecnoateneu.cat
 
   - name: Agile Girona
     image: sponsors/agile.png
+    href: https://twitter.com/AgileGirona
 
   - name: Geeks Grn
     image: sponsors/geeks.png
