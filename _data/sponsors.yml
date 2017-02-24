@@ -37,11 +37,11 @@ silver:
     image: sponsors/aenteg.png
     href: http://www.aenteg.com
 
+  - name: Tecno Ateneu Vilabrareix
+    image: sponsors/tecnoateneu-logo-font-incrustada.svg
+
   - name: Agile Girona
     image: sponsors/agile.png
 
   - name: Geeks Grn
     image: sponsors/geeks.png
-
-  - name: Free slot silver 02
-    image: sponsors/free-slot.png
