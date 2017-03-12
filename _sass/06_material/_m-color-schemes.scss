@@ -13,12 +13,29 @@
 .m-color-scheme--white {
   background-color: $s-color-brand-white;
   color: $s-color-brand-black;
+  a {
+    color: $s-color-brand-red;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $s-color-brand-red;
+      text-decoration: underline;
+    }
+  }
 }
 
 .m-color-scheme--red {
   background-color: $s-color-brand-red;
   color: $s-color-white;
-  a { color: inherit; }
+  a {
+    color: lighten($s-color-brand-yellow, 15%);
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: lighten($s-color-brand-yellow, 15%);
+      text-decoration: underline;
+    }
+  }
 }
 
 .m-color-scheme--turquoise {

@@ -1,0 +1,42 @@
+
+/* ==========================================================================
+ * BUTTON
+ *
+ * Button styles
+ *
+   ========================================================================== */
+
+.c-btn {
+  border-radius: .2em;
+  font-family: $s-font-headings;
+  padding: .3em .6em;
+  font-size: 1.2rem;
+  border-width: 1px;
+
+  &.c-btn--blue {
+    color: $s-color-white;
+    border-color: darken($s-color-brand-blue, 15%);
+    background-color: $s-color-brand-blue;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $s-color-white;
+      background-color: darken($s-color-brand-blue, 5%);
+      text-decoration: none;
+    }
+  }
+
+  &.c-btn--red {
+    color: $s-color-white;
+    border-color: darken($s-color-brand-red, 15%);
+    background-color: $s-color-brand-red;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $s-color-white;
+      background-color: darken($s-color-brand-red, 5%);
+      text-decoration: none;
+    }
+  }
+
+}
