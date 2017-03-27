@@ -28,8 +28,9 @@ gold:
     image: sponsors/cloudways.png
     href: https://www.cloudways.com
 
-  - name: Free slot gold 02
-    image: sponsors/free-slot.png
+  - name: Haribo
+    image: sponsors/logo-haribo.png
+    href: https://www.haribo.com/esES/pagina-de-inicio.html
 
 silver:
 
