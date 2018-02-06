@@ -48,3 +48,7 @@ silver:
 
   - name: Geeks Grn
     image: sponsors/geeks.png
+
+  - name: Fiware
+    image: sponsors/fiware.png
+    href: https://www.fiware.org
